@@ -1,0 +1,8 @@
+data clean_traffic;
+    set pg2.np_monthlytraffic;
+    drop Year;
+    length Type $ 5;
+    Type=scan(ParkName, -1); /* is a great way to extract a particular word, in this case the last word (-1) */
+    Region=upcase(compress(Region)); 
+    Location=propcase(Location);
+run;
