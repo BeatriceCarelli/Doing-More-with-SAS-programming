@@ -5,8 +5,7 @@
 data type_lookup  ;
 /* create the FmtName column with a value of  $TypeFmt */
     retain FmtName $TypeFmtM.; 
-   
-    set pg2.np_codeLookup (rename =(Parkcode=Start Type=Label));;
+    set pg2.np_codeLookup (rename =(Parkcode=Start Type=Label));
     keep Start Label FmtName;
 run;
 
