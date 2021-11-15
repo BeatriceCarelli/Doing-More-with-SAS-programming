@@ -2,11 +2,11 @@
 *        statement to rename the ParkCode column to Start *;
 *        and the Type column to Label*/
 
-data type_lookup (rename =(Parkcode=Start Type=Label)); 
+data type_lookup  ;
 /* create the FmtName column with a value of  $TypeFmt */
-    retain FmtName $TypeFmtM; 
+    retain FmtName $TypeFmtM.; 
    
-    set pg2.np_codeLookup;
+    set pg2.np_codeLookup (rename =(Parkcode=Start Type=Label));;
     keep Start Label FmtName;
 run;
 
